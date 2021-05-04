@@ -10,39 +10,31 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: SafeArea(
-          child: Column(
+          backgroundColor: Colors.teal,
+          body: SafeArea(
+              child: Column(
+            children: [buildCircleAvatar(), buildUserText()],
+          ))),
+    );
+  }
 
-            children: [
-               CircleAvatar(
-                 radius: 50.0,
-                 backgroundImage: AssetImage('images/headshot.jpg'),
+  Text buildUserText() {
+    return Text(
+      'Jim Carter',
+      style: TextStyle(
+          color: Colors.white, fontFamily: 'Anton', fontSize: 24.0),
+    );
+  }
 
-               ),
-                  Text('Jim Carter',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40.0,
-                      fontWeight: FontWeight.bold
-                    ),
-
-                )
-            ],
-          )
-
-
-        )
-      ),
+  CircleAvatar buildCircleAvatar() {
+    return CircleAvatar(
+      radius: 50.0,
+      backgroundImage: AssetImage('images/headshot.jpg'),
     );
   }
 }
-
-
 
 // class MyHomePage extends StatefulWidget {
 //   MyHomePage({Key key, this.title}) : super(key: key);
